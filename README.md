@@ -1,4 +1,4 @@
-# calendar
+# カレンダー
 
 ## 開発環境
 - OS：Linux(CentOS)
