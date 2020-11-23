@@ -1,0 +1,40 @@
+<%= form_with(model: event, local: true) do |form| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field col-xs-9">
+    <%= form.label :タイトル, class: "col-xs-4" %>
+    <%= form.text_field :title, class: "col-xs-6" %>
+  </div>
+
+  <div class="field col-xs-9">
+    <%= form.label :詳細, class: "col-xs-4" %>
+    <%= form.text_field :body, class: "col-xs-6" %>
+  </div>
+
+  <div class="field col-xs-9">
+    <%= form.label :開始日時, class: "col-xs-4" %>
+    <%= form.datetime_select :start_date, class: "col-xs-6" %>
+  </div>
+
+  <div class="field col-xs-9">
+    <%= form.label :終了日時, class: "col-xs-4" %>
+    <%= form.datetime_select :end_date, class: "col-xs-6" %>
+  </div>
+
+  <div class="actions col-xs-9">
+    <br>
+    <%= form.submit "保存", class: "btn btn-success" %>
+    <%= link_to '戻る', events_path, class: "btn btn-warning" %>
+  </div>
+
+<% end %>

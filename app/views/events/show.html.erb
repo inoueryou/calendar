@@ -1,0 +1,30 @@
+<div class="container">
+  <div class=row>
+    <p id="notice"><%= notice %></p>
+    <h1 class="well well-sm col-xs-3 text-center">詳細</h1>
+  </div>
+
+  <p>
+    <strong>タイトル:</strong>
+    <%= @event.title %>
+  </p>
+
+  <p>
+    <strong>詳細:</strong>
+    <%= @event.body %>
+  </p>
+
+  <p>
+    <strong>開始日時:</strong>
+    <%= @event.start_date %>
+  </p>
+
+  <p>
+    <strong>終了日時:</strong>
+    <%= @event.end_date %>
+  </p>
+  <br>
+  <%= link_to '編集', edit_event_path(@event), class: "btn btn-primary" %>
+  <%= link_to '戻る', events_path, class: "btn btn-warning" %>
+
+</div>
